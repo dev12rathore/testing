@@ -9,5 +9,9 @@ else
        exit 0
 fi
 
-ls -l
-
+if [ -z "$1" ]
+  then
+    echo "No argument supplied"
+else
+    echo "$1" 
+fi
