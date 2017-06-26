@@ -37,6 +37,8 @@ fi
           docker login -u $USER
           docker push $USER/testing:${VERSION}
      else
-          echo -e “docker images is not build \n Please find error“
+          echo ""
+          echo “docker images is not build"
+          echo "Please find error“
           exit 0
      fi
