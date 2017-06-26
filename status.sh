@@ -18,11 +18,11 @@ if [ -z "$1" ]
      exit 0
 else
 
-     read -p "Are you sure you wish to continue?"
-        if [ "$REPLY" != "yes" ]; then
-           git tag ${1}
-           git push --tags
-        fi
+    read -p "Are you sure you wish to continue tag on git? (y/n)? (Default N)" CONT
+       if [[ "$CONT" = "y" || "$CONT" = "Y" || "$CONT" = "yes" || "$CONT" = "YES" || "$CONT" = "Yes" ]]; then
+         git tag ${1}
+         git push --tags
+       fi
 
 fi
 
@@ -35,8 +35,13 @@ fi
  
 if [ $? -eq 0 ];
   then
-     docker login -u $USER
-     docker push $USER/testing:${1}
+
+    read -p "Are you sure you wish to continue push images on docker hub? (y/n)? (Default N)" CONT
+       if [[ "$CONT" = "y" || "$CONT" = "Y" || "$CONT" = "yes" || "$CONT" = "YES" || "$CONT" = "Yes" ]]; then
+         docker login -u $USER
+         docker push $USER/testing:${1}
+       fi
+
 else
      echo ""
      echo "docker images is not build"
