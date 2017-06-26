@@ -1,3 +1,2 @@
 FROM busybox
 
-COPY add /
