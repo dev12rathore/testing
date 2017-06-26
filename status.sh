@@ -20,7 +20,7 @@ else
       --build-arg version=${VERSION} \
       --build-arg gitbranch=$(git rev-parse --abbrev-ref HEAD) \
       --build-arg githash=$(git rev-parse --short HEAD) \
-      -t cavo2/testing{VERSION} -f worker-ui/Dockerfile . 
+      -t cavo2/testing:{VERSION} -f worker-ui/Dockerfile . 
     git tag ${VERSION}
     git push --tags
 fi
