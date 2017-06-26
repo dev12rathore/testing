@@ -38,7 +38,7 @@ fi
           docker push $USER/testing:${VERSION}
      else
           echo ""
-          echo “docker images is not build"
-          echo "Please find error“
+          echo "docker images is not build"
+          echo "Please find error"
           exit 0
      fi
