@@ -2,9 +2,10 @@
 USER=cavo2
 
 git diff --no-ext-diff --quiet --exit-code
-STATUS=$?
+# STATUS=$?
 
-if [ $STATUS -eq 0 ];
+#if [ $STATUS -eq 0 ];
+if [ $? -eq 0 ];
   then
      echo "Git is Look good"
 else
