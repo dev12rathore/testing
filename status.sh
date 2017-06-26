@@ -18,8 +18,11 @@ if [ -z "$1" ]
      exit 0
 else
 
-     git tag ${1}
-     git push --tags
+     read -p "Are you sure you wish to continue?"
+        if [ "$REPLY" != "yes" ]; then
+           git tag ${1}
+           git push --tags
+        fi
 
 fi
 
